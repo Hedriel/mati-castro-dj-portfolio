@@ -1,12 +1,23 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import { Instagram } from "lucide-react"
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -28,17 +39,18 @@ export function Hero() {
         <div className="flex flex-col lg:grid lg:grid-cols-2  lg:gap-8 items-center flex-1 h-full justify-between lg:justify-center">
           {/* Left side - Text content */}
           <motion.div
+            key={isMobile ? "text-mobile" : "text-desktop"}
             className="text-left order-1 flex-1 flex flex-col justify-center mt-8 lg:mt-0"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: isMobile ? 0.7 : 1, x: isMobile ? 0 : -50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             {/* Main Title */}
             <motion.h1
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-[#fe5900] neon-text"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.9 }}
             >
               MATI<br />CASTRO
             </motion.h1>
@@ -48,7 +60,7 @@ export function Hero() {
               className="text-base sm:text-lg md:text-xl text-white/80 mb-8 max-w-xl leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              transition={{ delay: isMobile ? 0.5 : 0.4, duration: 0.8 }}
             >
               Nacido en Adrogue Provincia de Bs As, Argentina, su historia comienza en 2014 con una obsesion inquebrantable por la musica; lo que empezo en fiestas pequenas pronto se transformo en una evolucion constante donde cada set era un viaje y una forma unica de conectar con el publico.
             </motion.p>
@@ -58,7 +70,7 @@ export function Hero() {
               className="flex items-center gap-4 mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              transition={{ delay: isMobile ? 0.8 : 0.6, duration: 0.3 }}
             >
               <motion.a
                 href="https://www.instagram.com/maticastrodj"
@@ -77,7 +89,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: isMobile ? 1.1 : 0.8, duration: 0.3 }}
             >
               <motion.a
                 href="#portfolio"
@@ -100,10 +112,11 @@ export function Hero() {
 
           {/* Right side - Floating Image */}
           <motion.div
+            key={isMobile ? "image-mobile" : "image-desktop"}
             className="relative order-2 flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            initial={{ opacity: 0, scale: isMobile ? 0.7 : 1, x: isMobile ? 0 : 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: isMobile ? 1.4 : 0.3 }}
           >
             <div className="relative w-[280px] sm:w-[350px] md:w-[400px] lg:w-[450px] xl:w-[500px] aspect-[3/4]">
               {/* Glow effect behind image */}
