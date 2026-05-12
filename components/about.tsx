@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Music, Award, Users, Calendar } from "lucide-react"
 
 const stats = [
-  { icon: Calendar, value: "10+", label: "Anos de experiencia" },
+  { icon: Calendar, value: "10+", label: "Años de experiencia" },
   { icon: Users, value: "500+", label: "Eventos realizados" },
   { icon: Music, value: "50K+", label: "Horas de musica" },
   { icon: Award, value: "100%", label: "Clientes satisfechos" },
@@ -113,7 +113,7 @@ export function About() {
               className="text-lg text-white/70 leading-relaxed"
               variants={itemVariants}
             >
-              Con los anos, su sonido se volvio inconfundible, mezclando generos con identidad propia y conquistando pistas cada vez mas grandes, hasta llegar a escenarios masivos y compartir cabina con los artistas mas virales y pegados de distintos generos. Lejos de frenarse, incluso en los momentos mas dificiles reinvento su camino, consolidando una presencia que hoy impone respeto y expectativa.
+              Con los años, su sonido se volvio inconfundible, mezclando generos con identidad propia y conquistando pistas cada vez mas grandes, hasta llegar a escenarios masivos y compartir cabina con los artistas mas virales y pegados de distintos generos. Lejos de frenarse, incluso en los momentos mas dificiles reinvento su camino, consolidando una presencia que hoy impone respeto y expectativa.
             </motion.p>
 
             <motion.p

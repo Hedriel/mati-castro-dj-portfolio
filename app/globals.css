@@ -65,17 +65,17 @@
 
 /* Custom neon glow utilities */
 .neon-text {
-  text-shadow: 
-    0 0 5px #fe5900,
-    0 0 10px #fe5900,
-    0 0 20px #fe5900,
-    0 0 40px #fe5900;
+  text-shadow:
+    0 0 5px rgba(254, 89, 0, 0.7),
+    0 0 10px rgba(254, 89, 0, 0.6),
+    0 0 20px rgba(254, 89, 0, 0.5),
+    0 0 40px rgba(254, 89, 0, 0.4);
 }
 
 .neon-text-subtle {
-  text-shadow: 
-    0 0 5px #fe5900,
-    0 0 10px #fe5900;
+  text-shadow:
+    0 0 5px rgba(254, 89, 0, 0.7),
+    0 0 10px rgba(254, 89, 0, 0.5);
 }
 
 .neon-box {
