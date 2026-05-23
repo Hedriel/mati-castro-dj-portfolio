@@ -8,10 +8,12 @@ import { Instagram } from "lucide-react";
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
+      setIsDesktop(window.innerWidth >= 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -26,21 +28,21 @@ export function Hero() {
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.5],
-    [1, isMobile ? 1 : 0],
+    [1, 0],
   );
 
   return (
     <section
       ref={ref}
       id="inicio"
-      className="relative min-h-[100dvh] flex flex-col lg:flex-row items-center overflow-hidden pt-24 pb-24 lg:pt-0 lg:pb-0"
+      className="relative min-h-[100svh] lg:min-h-[100dvh] flex flex-col lg:flex-row items-center overflow-x-clip lg:overflow-hidden pt-24 lg:pt-0 pb-12 lg:pb-0"
     >
       {/* Content */}
       <motion.div
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col lg:block justify-center pb-0 lg:py-0"
-        style={{ opacity }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col lg:block justify-center pb-8 lg:pb-0"
+        style={isMobile ? undefined : { opacity }}
       >
-        <div className="flex flex-col lg:grid lg:grid-cols-2  lg:gap-8 items-center flex-1 h-full justify-between lg:justify-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 items-center flex-1 lg:h-full justify-start lg:justify-center gap-8">
           {/* Left side - Text content */}
           <motion.div
             key={isMobile ? "text-mobile" : "text-desktop"}
@@ -145,54 +147,55 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right side - Floating Image */}
-          <motion.div
-            key={isMobile ? "image-mobile" : "image-desktop"}
-            className="relative order-2 hidden lg:flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20 z-0"
-            initial={{
-              opacity: 0,
-              scale: isMobile ? 0.7 : 1,
-              x: isMobile ? 0 : 50,
-            }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay: isMobile ? 1.4 : 0.3,
-            }}
-          >
-            <div className="relative w-[252px] sm:w-[315px] md:w-[360px] lg:w-[405px] xl:w-[450px] aspect-[3/4] rounded-3xl">
-              {/* Floating animated container */}
-              <motion.div
-                className="relative w-full h-full lg:animate-float max-lg:!transform-none border-2 border-[#fe5900] rounded-3xl overflow-hidden"
-                animate={{
-                  y: [0, -10, 0, -5, 0],
-                  x: [0, 3, 0, -3, 0],
-                  boxShadow: [
-                    "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
-                    "0 0 40px rgba(254, 89, 0, 0.9), 0 0 80px rgba(254, 89, 0, 0.5), inset 0 0 25px rgba(254, 89, 0, 0.3)",
-                    "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
-                  ],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                {/* Glow effect behind image */}
-                <div className="absolute inset-0 bg-[#fe5900]/20 blur-3xl rounded-full scale-75" />
+          {/* Right side - Floating Image - only render on desktop */}
+          {isDesktop && (
+            <motion.div
+              className="relative order-2 flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20"
+              initial={{
+                opacity: 0,
+                scale: 1,
+                x: 50,
+              }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: 0.3,
+              }}
+            >
+              <div className="relative w-[252px] sm:w-[315px] md:w-[360px] lg:w-[405px] xl:w-[450px] aspect-[3/4] rounded-3xl">
+                {/* Floating animated container */}
+                <motion.div
+                  className="relative w-full h-full animate-float border-2 border-[#fe5900] rounded-3xl overflow-hidden"
+                  animate={{
+                    y: [0, -10, 0, -5, 0],
+                    x: [0, 3, 0, -3, 0],
+                    boxShadow: [
+                      "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
+                      "0 0 40px rgba(254, 89, 0, 0.9), 0 0 80px rgba(254, 89, 0, 0.5), inset 0 0 25px rgba(254, 89, 0, 0.3)",
+                      "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  {/* Glow effect behind image */}
+                  <div className="absolute inset-0 bg-[#fe5900]/20 blur-3xl rounded-full scale-75" />
 
-                <Image
-                  src="/maticastro-hero.jpg"
-                  alt="Mati Castro DJ"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </motion.div>
-            </div>
-          </motion.div>
+                  <Image
+                    src="/maticastro-hero.jpg"
+                    alt="Mati Castro DJ"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </motion.div>
     </section>
