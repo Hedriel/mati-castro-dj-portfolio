@@ -23,7 +23,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, isMobile ? 1 : 0]);
 
   return (
     <section
@@ -77,7 +77,7 @@ export function Hero() {
 
             {/* Social Icons */}
             <motion.div
-              className="flex items-center gap-6 mb-8"
+              className="flex items-center justify-center sm:justify-start gap-6 mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: isMobile ? 0.8 : 0.6, duration: 0.3 }}

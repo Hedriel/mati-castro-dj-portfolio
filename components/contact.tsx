@@ -289,10 +289,6 @@ export function Contact() {
                 <div className="w-12 h-12 rounded-full bg-[#fe5900]/20 flex items-center justify-center group-hover:bg-[#fe5900]/30 transition-colors">
                   <Mail className="w-6 h-6 text-[#fe5900]" />
                 </div>
-                <div>
-                  <p className="text-white font-medium">Email</p>
-                  <p className="text-white/60 text-sm">contacto@maticastro.com</p>
-                </div>
               </motion.a>
             </div>
 

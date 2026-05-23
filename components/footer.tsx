@@ -19,7 +19,6 @@ const socialLinks = [
     href: "https://soundcloud.com/maticastrodj",
     label: "SoundCloud",
   },
-  { icon: Mail, href: "mailto:contacto@maticastro.com", label: "Email" },
 ];
 
 const navLinks = [

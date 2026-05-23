@@ -111,13 +111,13 @@ export function About() {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-2 gap-6 pt-8"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 justify-items-center"
               variants={containerVariants}
             >
               {stats.map((stat, index) => (
-                <motion.div
+                  <motion.div
                   key={stat.label}
-                  className="text-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#fe5900]/50 transition-colors"
+                  className="text-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#fe5900]/50 transition-colors w-full max-w-xs"
                   variants={itemVariants}
                   whileHover={{
                     scale: 1.05,
