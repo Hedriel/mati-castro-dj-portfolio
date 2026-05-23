@@ -44,7 +44,7 @@ export function Services() {
   };
 
   return (
-    <section id="setup" className="py-24 bg-black relative overflow-hidden">
+    <section id="setup" className="py-24 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#fe5900]/5 via-transparent to-transparent" />
 

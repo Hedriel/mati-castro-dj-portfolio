@@ -96,38 +96,33 @@ function PortfolioItem({
     <motion.div
       ref={ref}
       style={{ scale, opacity }}
-      className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer"
+      className="group relative aspect-[4/3] rounded-xl cursor-pointer transition-shadow duration-300 md:hover:shadow-[0_0_40px_rgba(254,89,0,0.2)]"
       onClick={onClick}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
     >
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        className="object-cover transition-transform duration-500 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative w-full h-full overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
 
-      {/* Hover overlay */}
-      <motion.div
-        className="absolute inset-0 border-2 border-[#fe5900]/0 group-hover:border-[#fe5900]/50 rounded-xl transition-colors duration-300"
-        whileHover={{
-          boxShadow: "inset 0 0 30px rgba(254, 89, 0, 0.2)",
-        }}
-      />
+        {/* Hover overlay */}
+        <div className="absolute inset-0 border-2 border-[#fe5900]/50 md:border-[#fe5900]/0 md:group-hover:border-[#fe5900]/50 rounded-xl transition-all duration-300" />
 
-      {/* Category badge */}
-      <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span className="px-3 py-1 bg-[#fe5900] text-black text-xs font-bold rounded-full">
-          {image.category}
-        </span>
-      </div>
+        {/* Category badge */}
+        <div className="absolute top-4 left-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+          <span className="px-3 py-1 bg-[#fe5900] text-black text-xs font-bold rounded-full inline-block shadow-[0_0_8px_rgba(254,89,0,0.9),0_0_20px_rgba(254,89,0,0.6),0_0_40px_rgba(254,89,0,0.3)]">
+            {image.category}
+          </span>
+        </div>
 
-      {/* View indicator */}
-      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="w-10 h-10 bg-[#fe5900] rounded-full flex items-center justify-center">
-          <span className="text-black text-xl">+</span>
+        {/* View indicator - hidden on mobile */}
+        <div className="absolute bottom-4 right-4 hidden md:block md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+          <div className="w-10 h-10 bg-[#fe5900] rounded-full flex items-center justify-center">
+            <span className="text-black text-xl">+</span>
+          </div>
         </div>
       </div>
     </motion.div>

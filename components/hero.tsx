@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Instagram } from "lucide-react";
@@ -20,17 +20,6 @@ export function Hero() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [1, 0],
-  );
-
   return (
     <section
       ref={ref}
@@ -40,7 +29,6 @@ export function Hero() {
       {/* Content */}
       <motion.div
         className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col lg:block justify-center pb-8 lg:pb-0"
-        style={isMobile ? undefined : { opacity }}
       >
         <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 items-center flex-1 lg:h-full justify-start lg:justify-center gap-8">
           {/* Left side - Text content */}
