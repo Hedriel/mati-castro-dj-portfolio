@@ -83,19 +83,9 @@ export function Contact() {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Hagamos{" "}
-            <span className="text-[#fe5900] neon-text-subtle">tu evento</span>
+            Reserva{" "}
+            <span className="text-[#fe5900] neon-text-subtle">tu fecha</span>
           </motion.h2>
-          <motion.p
-            className="text-lg text-white/60 mt-4 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Contame sobre tu evento y te respondo en menos de 24 horas con una
-            propuesta personalizada.
-          </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
