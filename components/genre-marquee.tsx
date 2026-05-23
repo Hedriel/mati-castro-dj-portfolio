@@ -1,20 +1,12 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-const genres = [
-  "LATIN TECH",
-  "GUARACHA",
-  "REGGAETON",
-  "RKT",
-  "FUNK",
-  "DEMBOW",
-  "CURRENT STYLES & MORE",
-]
+const genres = ["LATIN TECH", "GUARACHA", "REGGAETON", "RKT", "FUNK", "DEMBOW"];
 
 export function GenreMarquee() {
   // Duplicate the array to create seamless loop
-  const duplicatedGenres = [...genres, ...genres, ...genres, ...genres]
+  const duplicatedGenres = [...genres, ...genres, ...genres, ...genres];
 
   return (
     <div className="relative h-[50px] bg-[#fe5900] overflow-hidden">
@@ -46,5 +38,5 @@ export function GenreMarquee() {
         ))}
       </motion.div>
     </div>
-  )
+  );
 }

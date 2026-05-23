@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navItems = [
   { name: "Inicio", href: "#inicio" },
-  { name: "Servicios", href: "#servicios" },
+  { name: "Setup", href: "#setup" },
   { name: "Portfolio", href: "#portfolio" },
   { name: "Sobre Mí", href: "#sobre-mi" },
   { name: "Contacto", href: "#contacto" },
-]
+];
 
 // Animated hamburger icon component
 function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
@@ -41,32 +41,32 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
         transition={{ duration: 0.3, ease: "easeInOut" }}
       />
     </div>
-  )
+  );
 }
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ''
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isMobileMenuOpen])
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -122,7 +122,7 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                Reservar Evento
+                Reservar Fecha
               </motion.a>
             </div>
 
@@ -182,7 +182,7 @@ export function Navbar() {
                   transition={{ delay: 0.5, duration: 0.4 }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Reservar Evento
+                  Reservar Fecha
                 </motion.a>
               </div>
             </div>
@@ -190,5 +190,5 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

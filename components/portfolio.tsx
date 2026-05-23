@@ -1,9 +1,14 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
-import { useRef, useState } from "react"
-import Image from "next/image"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef, useState } from "react";
+import Image from "next/image";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const portfolioImages = [
   {
@@ -32,7 +37,7 @@ const portfolioImages = [
     category: "Festival",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-16%20at%2014.22.40%283%29-nrtaJ4wERQliSt99OqurVOEpKvm9jm.jpeg",
+    src: "/maticastro-dj.jpeg",
     alt: "DJ con auriculares Paradise",
     category: "Club",
   },
@@ -66,26 +71,26 @@ const portfolioImages = [
     alt: "DJ con luces azules",
     category: "Club",
   },
-]
+];
 
 // Individual portfolio item with scroll-based scale
-function PortfolioItem({ 
-  image, 
-  index, 
-  onClick 
-}: { 
-  image: typeof portfolioImages[0]
-  index: number
-  onClick: () => void 
+function PortfolioItem({
+  image,
+  index,
+  onClick,
+}: {
+  image: (typeof portfolioImages)[0];
+  index: number;
+  onClick: () => void;
 }) {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center center"],
-  })
-  
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.6, 1])
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
 
   return (
     <motion.div
@@ -103,7 +108,7 @@ function PortfolioItem({
         className="object-cover transition-transform duration-500 group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      
+
       {/* Hover overlay */}
       <motion.div
         className="absolute inset-0 border-2 border-[#fe5900]/0 group-hover:border-[#fe5900]/50 rounded-xl transition-colors duration-300"
@@ -111,7 +116,7 @@ function PortfolioItem({
           boxShadow: "inset 0 0 30px rgba(254, 89, 0, 0.2)",
         }}
       />
-      
+
       {/* Category badge */}
       <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <span className="px-3 py-1 bg-[#fe5900] text-black text-xs font-bold rounded-full">
@@ -126,20 +131,24 @@ function PortfolioItem({
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
 export function Portfolio() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const navigateImage = (direction: "prev" | "next") => {
-    if (selectedImage === null) return
+    if (selectedImage === null) return;
     if (direction === "prev") {
-      setSelectedImage(selectedImage === 0 ? portfolioImages.length - 1 : selectedImage - 1)
+      setSelectedImage(
+        selectedImage === 0 ? portfolioImages.length - 1 : selectedImage - 1,
+      );
     } else {
-      setSelectedImage(selectedImage === portfolioImages.length - 1 ? 0 : selectedImage + 1)
+      setSelectedImage(
+        selectedImage === portfolioImages.length - 1 ? 0 : selectedImage + 1,
+      );
     }
-  }
+  };
 
   return (
     <section id="portfolio" className="py-24 relative overflow-hidden">
@@ -172,7 +181,9 @@ export function Portfolio() {
             viewport={{ once: true }}
           >
             Momentos{" "}
-            <span className="text-[#fe5900] neon-text-subtle">inolvidables</span>
+            <span className="text-[#fe5900] neon-text-subtle">
+              inolvidables
+            </span>
           </motion.h2>
           <motion.p
             className="text-lg text-white/60 mt-4 max-w-2xl mx-auto"
@@ -181,7 +192,8 @@ export function Portfolio() {
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Una seleccion de los mejores momentos capturados en mis eventos. Cada imagen cuenta una historia de energia y conexion.
+            Una seleccion de los mejores momentos capturados en mis shows. Cada
+            imagen cuenta una historia de energia y conexion.
           </motion.p>
         </motion.div>
 
@@ -220,8 +232,8 @@ export function Portfolio() {
             <button
               className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#fe5900] rounded-full flex items-center justify-center transition-colors z-10"
               onClick={(e) => {
-                e.stopPropagation()
-                navigateImage("prev")
+                e.stopPropagation();
+                navigateImage("prev");
               }}
             >
               <ChevronLeft className="w-6 h-6 text-white" />
@@ -229,8 +241,8 @@ export function Portfolio() {
             <button
               className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#fe5900] rounded-full flex items-center justify-center transition-colors z-10"
               onClick={(e) => {
-                e.stopPropagation()
-                navigateImage("next")
+                e.stopPropagation();
+                navigateImage("next");
               }}
             >
               <ChevronRight className="w-6 h-6 text-white" />
@@ -260,5 +272,5 @@ export function Portfolio() {
         )}
       </AnimatePresence>
     </section>
-  )
+  );
 }

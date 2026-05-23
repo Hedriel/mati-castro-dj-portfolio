@@ -1,20 +1,15 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-import Image from "next/image"
-import { Music, Award, Users, Calendar } from "lucide-react"
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
+import { Music, Award, Users, Calendar } from "lucide-react";
 
-const stats = [
-  { icon: Calendar, value: "10+", label: "Años de experiencia" },
-  { icon: Users, value: "500+", label: "Eventos realizados" },
-  { icon: Music, value: "50K+", label: "Horas de musica" },
-  { icon: Award, value: "100%", label: "Clientes satisfechos" },
-]
+const stats = [{ icon: Calendar, value: "10+", label: "Años de experiencia" }];
 
 export function About() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,7 +19,7 @@ export function About() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -33,7 +28,7 @@ export function About() {
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" },
     },
-  }
+  };
 
   return (
     <section id="sobre-mi" className="py-24 relative overflow-hidden">
@@ -50,10 +45,7 @@ export function About() {
           className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
         >
           {/* Image */}
-          <motion.div
-            variants={itemVariants}
-            className="relative"
-          >
+          <motion.div variants={itemVariants} className="relative">
             <motion.div
               className="relative aspect-[4/5] rounded-2xl overflow-hidden"
               whileHover={{ scale: 1.02 }}
@@ -67,7 +59,7 @@ export function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </motion.div>
-            
+
             {/* Decorative border */}
             <motion.div
               className="absolute -inset-4 border-2 border-[#fe5900]/30 rounded-2xl -z-10"
@@ -85,20 +77,12 @@ export function About() {
           {/* Content */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <motion.span
-                className="text-[#fe5900] font-bold text-sm tracking-widest uppercase"
-                variants={itemVariants}
-              >
-                Sobre Mi
-              </motion.span>
               <motion.h2
                 className="text-4xl sm:text-5xl font-bold text-white mt-2 leading-tight"
                 variants={itemVariants}
               >
-                Mas que musica,{" "}
-                <span className="text-[#fe5900] neon-text-subtle">
-                  experiencias
-                </span>
+                Sobre&nbsp;
+                <span className="text-[#fe5900] neon-text-subtle">Mi</span>
               </motion.h2>
             </div>
 
@@ -106,21 +90,23 @@ export function About() {
               className="text-lg text-white/70 leading-relaxed"
               variants={itemVariants}
             >
-              Nacido en Adrogue Provincia de Bs As, Argentina, su historia comienza en 2014 con una obsesion inquebrantable por la musica; lo que empezo en fiestas pequenas pronto se transformo en una evolucion constante donde cada set era un viaje y una forma unica de conectar con el publico.
+              Con los años, su sonido se volvio inconfundible, mezclando generos
+              con identidad propia y conquistando pistas cada vez mas grandes,
+              hasta llegar a escenarios masivos y compartir cabina con los
+              artistas mas virales y pegados de distintos generos. Lejos de
+              frenarse, incluso en los momentos mas dificiles reinvento su
+              camino, consolidando una presencia que hoy impone respeto y
+              expectativa.
             </motion.p>
 
             <motion.p
               className="text-lg text-white/70 leading-relaxed"
               variants={itemVariants}
             >
-              Con los años, su sonido se volvio inconfundible, mezclando generos con identidad propia y conquistando pistas cada vez mas grandes, hasta llegar a escenarios masivos y compartir cabina con los artistas mas virales y pegados de distintos generos. Lejos de frenarse, incluso en los momentos mas dificiles reinvento su camino, consolidando una presencia que hoy impone respeto y expectativa.
-            </motion.p>
-
-            <motion.p
-              className="text-lg text-white/70 leading-relaxed"
-              variants={itemVariants}
-            >
-              Mas que seguir tendencias, las transforma, dejando su marca en cada lugar donde toca, porque su historia no es solo la de un DJ, sino la de una ambicion que sigue creciendo y que aun esta lejos de alcanzar su techo.
+              Mas que seguir tendencias, las transforma, dejando su marca en
+              cada lugar donde toca, porque su historia no es solo la de un DJ,
+              sino la de una ambicion que sigue creciendo y que aun esta lejos
+              de alcanzar su techo.
             </motion.p>
 
             {/* Stats */}
@@ -151,5 +137,5 @@ export function About() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,22 +1,34 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Instagram, Youtube, Music2, Mail } from "lucide-react"
+import { motion } from "framer-motion";
+import { Instagram, Youtube, Music2, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com/maticastrodj", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com/@maticastrodj", label: "YouTube" },
-  { icon: Music2, href: "https://soundcloud.com/maticastrodj", label: "SoundCloud" },
+  {
+    icon: Instagram,
+    href: "https://instagram.com/maticastrodj",
+    label: "Instagram",
+  },
+  {
+    icon: Youtube,
+    href: "https://youtube.com/@maticastrodj",
+    label: "YouTube",
+  },
+  {
+    icon: Music2,
+    href: "https://soundcloud.com/maticastrodj",
+    label: "SoundCloud",
+  },
   { icon: Mail, href: "mailto:contacto@maticastro.com", label: "Email" },
-]
+];
 
 const navLinks = [
   { name: "Inicio", href: "#inicio" },
-  { name: "Servicios", href: "#servicios" },
+  { name: "Setup", href: "#setup" },
   { name: "Portfolio", href: "#portfolio" },
   { name: "Sobre Mí", href: "#sobre-mi" },
   { name: "Contacto", href: "#contacto" },
-]
+];
 
 export function Footer() {
   return (
@@ -36,8 +48,9 @@ export function Footer() {
               MATI CASTRO
             </motion.a>
             <p className="text-white/60 leading-relaxed">
-              DJ profesional especializado en eventos corporativos y experiencias premium. 
-              Transformando cada evento en un momento inolvidable.
+              DJ profesional especializado en eventos corporativos y
+              experiencias premium. Transformando cada evento en un momento
+              inolvidable.
             </p>
           </div>
 
@@ -83,7 +96,8 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} Mati Castro. Todos los derechos reservados.
+            © {new Date().getFullYear()} Mati Castro. Todos los derechos
+            reservados.
           </p>
           <motion.a
             href="#contacto"
@@ -91,10 +105,10 @@ export function Footer() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Reservar Evento
+            Reservar Fecha
           </motion.a>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,45 +1,27 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-import { Building2, Megaphone, Crown, Users, Heart } from "lucide-react"
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
 
-const services = [
+const equipment = [
   {
-    icon: Building2,
-    title: "Eventos Corporativos",
-    description:
-      "Fiestas de empresa, after-office, celebraciones de fin de año y reuniones corporativas con la energía perfecta.",
+    name: "PIONEER SX2",
+    image: "/consola-sx2.jpeg",
   },
   {
-    icon: Megaphone,
-    title: "Lanzamientos de Marca",
-    description:
-      "Creamos la atmósfera ideal para presentaciones de producto, inauguraciones y eventos de marketing.",
+    name: "PIONEER RX3 (ALL IN ONE)",
+    image: "/consola-rx3.jpeg",
   },
   {
-    icon: Crown,
-    title: "Fiestas Privadas Premium",
-    description:
-      "Cumpleaños exclusivos, celebraciones VIP y eventos privados con un toque único y personalizado.",
+    name: "PIONEER RR (ALL IN ONE)",
+    image: "/consola-rr.jpeg",
   },
-  {
-    icon: Users,
-    title: "Team Building",
-    description:
-      "Dinámicas musicales, actividades interactivas y experiencias que fortalecen equipos de trabajo.",
-  },
-  {
-    icon: Heart,
-    title: "Bodas & Eventos Especiales",
-    description:
-      "Ceremonias, recepciones y fiestas de boda con setlists personalizados para cada momento.",
-  },
-]
+];
 
 export function Services() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,7 +31,7 @@ export function Services() {
         staggerChildren: 0.15,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
@@ -59,13 +41,13 @@ export function Services() {
       scale: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   return (
-    <section id="servicios" className="py-24 bg-black relative overflow-hidden">
+    <section id="setup" className="py-24 bg-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#fe5900]/5 via-transparent to-transparent" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
@@ -82,7 +64,7 @@ export function Services() {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Servicios
+            Setup
           </motion.span>
           <motion.h2
             className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mt-2"
@@ -91,8 +73,7 @@ export function Services() {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Lo que{" "}
-            <span className="text-[#fe5900] neon-text-subtle">ofrezco</span>
+            Mi <span className="text-[#fe5900] neon-text-subtle">equipo</span>
           </motion.h2>
           <motion.p
             className="text-lg text-white/60 mt-4 max-w-2xl mx-auto"
@@ -101,11 +82,12 @@ export function Services() {
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Servicios profesionales adaptados a cada tipo de evento, con la calidad y energía que tu celebración merece.
+            Consolas profesionales Pioneer que garantizan la mejor calidad de
+            sonido y performance en cada evento.
           </motion.p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Equipment Grid */}
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -113,15 +95,15 @@ export function Services() {
           animate={isInView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {services.map((service, index) => (
+          {equipment.map((item) => (
             <motion.div
-              key={service.title}
+              key={item.name}
               variants={cardVariants}
               className="group relative"
               whileHover={{ y: -10 }}
             >
               <motion.div
-                className="relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 h-full overflow-hidden"
+                className="relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 h-full overflow-hidden flex flex-col"
                 whileHover={{
                   borderColor: "rgba(254, 89, 0, 0.5)",
                   boxShadow: "0 0 40px rgba(254, 89, 0, 0.2)",
@@ -129,36 +111,22 @@ export function Services() {
                 transition={{ duration: 0.3 }}
               >
                 {/* Glow effect on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-[#fe5900]/0 group-hover:bg-[#fe5900]/5 transition-colors duration-500"
-                />
+                <motion.div className="absolute inset-0 bg-[#fe5900]/0 group-hover:bg-[#fe5900]/5 transition-colors duration-500" />
 
-                {/* Icon */}
-                <motion.div
-                  className="w-16 h-16 rounded-xl bg-[#fe5900]/10 flex items-center justify-center mb-6 relative"
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: "0 0 30px rgba(254, 89, 0, 0.5)",
-                  }}
-                >
-                  <service.icon className="w-8 h-8 text-[#fe5900]" />
-                  <motion.div
-                    className="absolute inset-0 rounded-xl border border-[#fe5900]/50"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.5, 0, 0.5],
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                </motion.div>
-
-                {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fe5900] transition-colors">
-                  {service.title}
+                {/* Name */}
+                <h3 className="text-lg font-bold text-[#fe5900] mb-4 relative z-10 text-center tracking-wide">
+                  {item.name}
                 </h3>
-                <p className="text-white/60 leading-relaxed">
-                  {service.description}
-                </p>
+
+                {/* Image */}
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden flex-1 p-4 bg-white">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
                 {/* Decorative corner */}
                 <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
@@ -174,5 +142,5 @@ export function Services() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

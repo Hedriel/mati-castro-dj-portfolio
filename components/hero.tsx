@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef, useState, useEffect } from "react"
-import Image from "next/image"
-import { Instagram } from "lucide-react"
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { Instagram } from "lucide-react";
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isMobile, setIsMobile] = useState(false)
+  const ref = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640)
-    }
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
-  })
+  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section
@@ -41,7 +41,11 @@ export function Hero() {
           <motion.div
             key={isMobile ? "text-mobile" : "text-desktop"}
             className="text-left order-1 flex-1 flex flex-col justify-center mt-8 lg:mt-0"
-            initial={{ opacity: 0, scale: isMobile ? 0.7 : 1, x: isMobile ? 0 : -50 }}
+            initial={{
+              opacity: 0,
+              scale: isMobile ? 0.7 : 1,
+              x: isMobile ? 0 : -50,
+            }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
@@ -52,7 +56,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.9 }}
             >
-              MATI<br />CASTRO
+              MATI
+              <br />
+              CASTRO
             </motion.h1>
 
             {/* Subtitle */}
@@ -62,12 +68,16 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: isMobile ? 0.5 : 0.4, duration: 0.8 }}
             >
-              Nacido en Adrogue Provincia de Bs As, Argentina, su historia comienza en 2014 con una obsesion inquebrantable por la musica; lo que empezo en fiestas pequenas pronto se transformo en una evolucion constante donde cada set era un viaje y una forma unica de conectar con el publico.
+              Nacido en Adrogue Provincia de Bs As, Argentina, su historia
+              comienza en 2014 con una obsesion inquebrantable por la musica; lo
+              que empezo en fiestas pequenas pronto se transformo en una
+              evolucion constante donde cada set era un viaje y una forma unica
+              de conectar con el publico.
             </motion.p>
 
             {/* Social Icons */}
             <motion.div
-              className="flex items-center gap-4 mb-8"
+              className="flex items-center gap-6 mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: isMobile ? 0.8 : 0.6, duration: 0.3 }}
@@ -76,11 +86,32 @@ export function Hero() {
                 href="https://www.instagram.com/maticastrodj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-[#fe5900] border border-white/20 hover:border-[#fe5900] rounded-full flex items-center justify-center transition-all duration-300"
-                whileHover={{ scale: 1.1, boxShadow: "0 0 20px #fe5900" }}
+                className="flex flex-col items-center gap-1 group"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Instagram className="w-5 h-5 text-white" />
+                <span className="w-12 h-12 bg-white/10 group-hover:bg-[#fe5900] border border-white/20 group-hover:border-[#fe5900] rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_#fe5900]">
+                  <Instagram className="w-5 h-5 text-white" />
+                </span>
+                <span className="text-[10px] text-white/60 group-hover:text-[#fe5900] transition-colors duration-300 uppercase tracking-wider font-medium">
+                  Mati Castro
+                </span>
+              </motion.a>
+
+              <motion.a
+                href="https://www.instagram.com/newlevel.ok/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-1 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="w-12 h-12 bg-white/10 group-hover:bg-[#fe5900] border border-white/20 group-hover:border-[#fe5900] rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_#fe5900]">
+                  <Instagram className="w-5 h-5 text-white" />
+                </span>
+                <span className="text-[10px] text-white/60 group-hover:text-[#fe5900] transition-colors duration-300 uppercase tracking-wider font-medium">
+                  NewLevel.ok
+                </span>
               </motion.a>
             </motion.div>
 
@@ -114,20 +145,30 @@ export function Hero() {
           <motion.div
             key={isMobile ? "image-mobile" : "image-desktop"}
             className="relative order-2 flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20"
-            initial={{ opacity: 0, scale: isMobile ? 0.7 : 1, x: isMobile ? 0 : 50 }}
+            initial={{
+              opacity: 0,
+              scale: isMobile ? 0.7 : 1,
+              x: isMobile ? 0 : 50,
+            }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: isMobile ? 1.4 : 0.3 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay: isMobile ? 1.4 : 0.3,
+            }}
           >
-            <div className="relative w-[280px] sm:w-[350px] md:w-[400px] lg:w-[450px] xl:w-[500px] aspect-[3/4]">
-              {/* Glow effect behind image */}
-              <div className="absolute inset-0 bg-[#fe5900]/20 blur-3xl rounded-full scale-75" />
-
+            <div className="relative w-[252px] sm:w-[315px] md:w-[360px] lg:w-[405px] xl:w-[450px] aspect-[3/4] rounded-3xl">
               {/* Floating animated container */}
               <motion.div
-                className="relative w-full h-full lg:animate-float max-lg:!transform-none"
+                className="relative w-full h-full lg:animate-float max-lg:!transform-none border-2 border-[#fe5900] rounded-3xl overflow-hidden"
                 animate={{
                   y: [0, -10, 0, -5, 0],
                   x: [0, 3, 0, -3, 0],
+                  boxShadow: [
+                    "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
+                    "0 0 40px rgba(254, 89, 0, 0.9), 0 0 80px rgba(254, 89, 0, 0.5), inset 0 0 25px rgba(254, 89, 0, 0.3)",
+                    "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
+                  ],
                 }}
                 transition={{
                   duration: 8,
@@ -135,11 +176,14 @@ export function Hero() {
                   ease: "easeInOut",
                 }}
               >
+                {/* Glow effect behind image */}
+                <div className="absolute inset-0 bg-[#fe5900]/20 blur-3xl rounded-full scale-75" />
+
                 <Image
-                  src="/mati-castro-persona.png"
+                  src="/maticastro-hero.jpg"
                   alt="Mati Castro DJ"
                   fill
-                  className="object-contain object-bottom drop-shadow-[0_0_40px_rgba(254,89,0,0.3)]"
+                  className="object-cover"
                   priority
                 />
               </motion.div>
@@ -148,5 +192,5 @@ export function Hero() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }
