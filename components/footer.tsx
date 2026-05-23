@@ -47,9 +47,8 @@ export function Footer() {
               MATI CASTRO
             </motion.a>
             <p className="text-white/60 leading-relaxed">
-              DJ profesional especializado en eventos corporativos y
-              experiencias premium. Transformando cada evento en un momento
-              inolvidable.
+              DJ profesional especializado en experiencias premium.
+              Transformando cada fiesta en momentos inolvidables.
             </p>
           </div>
 

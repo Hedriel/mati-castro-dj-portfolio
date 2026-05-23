@@ -33,7 +33,7 @@ export function Hero() {
     <section
       ref={ref}
       id="inicio"
-      className="relative min-h-[100dvh] flex flex-col lg:flex-row items-center overflow-hidden pt-24 lg:pt-0"
+      className="relative min-h-[100dvh] flex flex-col lg:flex-row items-center overflow-hidden pt-24 pb-24 lg:pt-0 lg:pb-0"
     >
       {/* Content */}
       <motion.div
@@ -148,7 +148,7 @@ export function Hero() {
           {/* Right side - Floating Image */}
           <motion.div
             key={isMobile ? "image-mobile" : "image-desktop"}
-            className="relative order-2 hidden lg:flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20"
+            className="relative order-2 hidden lg:flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20 z-0"
             initial={{
               opacity: 0,
               scale: isMobile ? 0.7 : 1,

@@ -44,7 +44,7 @@ const portfolioImages = [
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-16%20at%2014.22.39%281%29-1eCerg0HApkC3E7vxh93VirNYTWCrY.jpeg",
     alt: "DJ con campera blanca y pantallas LED",
-    category: "Corporativo",
+    category: "Festival",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-16%20at%2014.22.38%281%29-G4WjNk5BeZdnHRXGRNu1eZ6WjgTJSs.jpeg",
