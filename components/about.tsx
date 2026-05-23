@@ -52,10 +52,10 @@ export function About() {
               transition={{ duration: 0.3 }}
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-16%20at%2014.22.41-e7Dj9DBgZ7d01a5iGwKUIMPb7xPxVA.jpeg"
-                alt="Mati Castro DJ"
+                src="/maticastro-about.jpg"
                 fill
                 className="object-cover"
+                alt={""}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </motion.div>
@@ -115,7 +115,7 @@ export function About() {
               variants={containerVariants}
             >
               {stats.map((stat, index) => (
-                  <motion.div
+                <motion.div
                   key={stat.label}
                   className="text-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#fe5900]/50 transition-colors w-full max-w-xs"
                   variants={itemVariants}

@@ -4,6 +4,17 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, Instagram, MessageCircle, Mail, MapPin } from "lucide-react";
 
+const WHATSAPP_NUMBER = "541162397047";
+
+const eventTypeLabels: Record<string, string> = {
+  corporativo: "Evento Corporativo",
+  lanzamiento: "Lanzamiento de Marca",
+  privado: "Fiesta Privada",
+  "team-building": "Team Building",
+  boda: "Boda / Evento Especial",
+  otro: "Otro",
+};
+
 export function Contact() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -14,24 +25,24 @@ export function Contact() {
     fecha: "",
     mensaje: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    // Simular envío
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormState({
-      nombre: "",
-      empresa: "",
-      tipoEvento: "",
-      fecha: "",
-      mensaje: "",
-    });
+
+    const lines = [
+      "Hola Mati! Me contacto desde tu página web.",
+      "",
+      `*Nombre:* ${formState.nombre || "No especificado"}`,
+      formState.empresa ? `*Empresa:* ${formState.empresa}` : "",
+      `*Tipo de evento:* ${eventTypeLabels[formState.tipoEvento] || formState.tipoEvento || "No especificado"}`,
+      formState.fecha ? `*Fecha aproximada:* ${formState.fecha}` : "",
+      formState.mensaje ? `*Mensaje:* ${formState.mensaje}` : "",
+    ];
+
+    const message = lines.filter(Boolean).join("\n");
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank");
   };
 
   const containerVariants = {
@@ -204,33 +215,12 @@ export function Contact() {
               <motion.div variants={itemVariants}>
                 <motion.button
                   type="submit"
-                  disabled={isSubmitting || isSubmitted}
-                  className={`w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 ${
-                    isSubmitted
-                      ? "bg-green-500 text-white"
-                      : "bg-[#fe5900] text-black hover:bg-[#ff7733] neon-box-subtle"
-                  }`}
-                  whileHover={{ scale: isSubmitted ? 1 : 1.02 }}
-                  whileTap={{ scale: isSubmitted ? 1 : 0.98 }}
+                  className="w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 bg-[#fe5900] text-black hover:bg-[#ff7733] neon-box-subtle"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  {isSubmitting ? (
-                    <motion.div
-                      className="w-6 h-6 border-2 border-black/30 border-t-black rounded-full"
-                      animate={{ rotate: 360 }}
-                      transition={{
-                        duration: 1,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    />
-                  ) : isSubmitted ? (
-                    "¡Mensaje enviado!"
-                  ) : (
-                    <>
-                      Enviar consulta
-                      <Send className="w-5 h-5" />
-                    </>
-                  )}
+                  Enviar por WhatsApp
+                  <MessageCircle className="w-5 h-5" />
                 </motion.button>
               </motion.div>
             </form>
@@ -251,7 +241,7 @@ export function Contact() {
               </h3>
 
               <motion.a
-                href="https://wa.me/5491123456789"
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-green-500/50 hover:bg-green-500/10 transition-all group"

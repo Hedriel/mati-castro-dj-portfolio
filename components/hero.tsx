@@ -23,7 +23,11 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, isMobile ? 1 : 0]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    [1, isMobile ? 1 : 0],
+  );
 
   return (
     <section
@@ -144,7 +148,7 @@ export function Hero() {
           {/* Right side - Floating Image */}
           <motion.div
             key={isMobile ? "image-mobile" : "image-desktop"}
-            className="relative order-2 flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20"
+            className="relative order-2 hidden lg:flex justify-center lg:justify-end items-end w-full mt-auto translate-y-20"
             initial={{
               opacity: 0,
               scale: isMobile ? 0.7 : 1,
