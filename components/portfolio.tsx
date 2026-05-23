@@ -193,7 +193,7 @@ export function Portfolio() {
             viewport={{ once: true }}
           >
             Una seleccion de los mejores momentos capturados en mis shows. Cada
-            imagen cuenta una historia de energia y conexion.
+            imagen cuenta una historia de energia y conexion con el publico.
           </motion.p>
         </motion.div>
 

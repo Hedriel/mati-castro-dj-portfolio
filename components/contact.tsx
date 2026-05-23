@@ -1,38 +1,38 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Send, Instagram, MessageCircle, Mail, MapPin } from "lucide-react"
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Send, Instagram, MessageCircle, Mail, MapPin } from "lucide-react";
 
 export function Contact() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formState, setFormState] = useState({
     nombre: "",
     empresa: "",
     tipoEvento: "",
     fecha: "",
     mensaje: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
     // Simular envío
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
     setFormState({
       nombre: "",
       empresa: "",
       tipoEvento: "",
       fecha: "",
       mensaje: "",
-    })
-  }
+    });
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,7 +42,7 @@ export function Contact() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -51,7 +51,7 @@ export function Contact() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
     <section id="contacto" className="py-24 bg-black relative overflow-hidden">
@@ -93,7 +93,8 @@ export function Contact() {
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Contame sobre tu evento y te respondo en menos de 24 horas con una propuesta personalizada.
+            Contame sobre tu evento y te respondo en menos de 24 horas con una
+            propuesta personalizada.
           </motion.p>
         </motion.div>
 
@@ -106,7 +107,10 @@ export function Contact() {
             animate={isInView ? "visible" : "hidden"}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
-              <motion.div variants={itemVariants} className="grid sm:grid-cols-2 gap-6">
+              <motion.div
+                variants={itemVariants}
+                className="grid sm:grid-cols-2 gap-6"
+              >
                 <div>
                   <label className="block text-white/80 text-sm font-medium mb-2">
                     Nombre *
@@ -138,7 +142,10 @@ export function Contact() {
                 </div>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="grid sm:grid-cols-2 gap-6">
+              <motion.div
+                variants={itemVariants}
+                className="grid sm:grid-cols-2 gap-6"
+              >
                 <div>
                   <label className="block text-white/80 text-sm font-medium mb-2">
                     Tipo de evento *
@@ -220,7 +227,11 @@ export function Contact() {
                     <motion.div
                       className="w-6 h-6 border-2 border-black/30 border-t-black rounded-full"
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     />
                   ) : isSubmitted ? (
                     "¡Mensaje enviado!"
@@ -248,7 +259,7 @@ export function Contact() {
               <h3 className="text-xl font-bold text-white mb-6">
                 Contacto directo
               </h3>
-              
+
               <motion.a
                 href="https://wa.me/5491123456789"
                 target="_blank"
@@ -281,30 +292,18 @@ export function Contact() {
                 </div>
               </motion.a>
 
-              <motion.a
-                href="mailto:contacto@maticastro.com"
-                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#fe5900]/50 hover:bg-[#fe5900]/10 transition-all group"
-                whileHover={{ scale: 1.02, x: 10 }}
-              >
-                <div className="w-12 h-12 rounded-full bg-[#fe5900]/20 flex items-center justify-center group-hover:bg-[#fe5900]/30 transition-colors">
-                  <Mail className="w-6 h-6 text-[#fe5900]" />
-                </div>
-              </motion.a>
-            </div>
-
-            {/* Location */}
-            <div className="p-6 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#fe5900]/20 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-[#fe5900]" />
-                </div>
-                <div>
-                  <p className="text-white font-medium">Ubicación</p>
-                  <p className="text-white/60 mt-1">
-                    Buenos Aires, Argentina
-                    <br />
-                    Disponible para eventos en todo el país y el exterior
-                  </p>
+              <div className="p-6 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#fe5900]/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-[#fe5900]" />
+                  </div>
+                  <div>
+                    <p className="text-white font-medium">Ubicación</p>
+                    <p className="text-white/60 mt-1">
+                      Buenos Aires, Argentina
+                      <br />
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -312,5 +311,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
