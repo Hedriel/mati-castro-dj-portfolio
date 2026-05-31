@@ -27,9 +27,7 @@ export function Hero() {
       className="relative min-h-[100svh] lg:min-h-[100dvh] flex flex-col lg:flex-row items-center overflow-x-clip lg:overflow-hidden pt-24 lg:pt-0 pb-12 lg:pb-0"
     >
       {/* Content */}
-      <motion.div
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col lg:block justify-center pb-8 lg:pb-0"
-      >
+      <motion.div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col lg:block justify-center pb-8 lg:pb-0">
         <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 items-center flex-1 lg:h-full justify-start lg:justify-center gap-8">
           {/* Left side - Text content */}
           <motion.div
@@ -62,11 +60,11 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: isMobile ? 0.5 : 0.4, duration: 0.8 }}
             >
-              Nacido en Adrogue Provincia de Bs As, Argentina, su historia
-              comienza en 2014 con una obsesion inquebrantable por la musica; lo
-              que empezo en fiestas pequenas pronto se transformo en una
-              evolucion constante donde cada set era un viaje y una forma unica
-              de conectar con el publico.
+              Nacido en Adrogué, Provincia de Bs As, Argentina, su historia
+              comienza en 2014 con una obsesión inquebrantable por la música; lo
+              que empezó en fiestas pequeñas pronto se transformó en una
+              evolución constante, donde cada set era un viaje y una forma única
+              de conectar con el público.
             </motion.p>
 
             {/* Social Icons */}
