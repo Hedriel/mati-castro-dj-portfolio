@@ -90,11 +90,11 @@ export function About() {
               className="text-lg text-white/70 leading-relaxed"
               variants={itemVariants}
             >
-              Con los años, su sonido se volvio inconfundible, mezclando generos
-              con identidad propia y conquistando pistas cada vez mas grandes,
+              Con los años, su sonido se volvió inconfundible, mezclando géneros
+              con identidad propia y conquistando pistas cada vez más grandes,
               hasta llegar a escenarios masivos y compartir cabina con los
-              artistas mas virales y pegados de distintos generos. Lejos de
-              frenarse, incluso en los momentos mas dificiles reinvento su
+              artistas más virales y pegados de distintos géneros. Lejos de
+              frenarse, incluso en los momentos más difíciles reinventó su
               camino, consolidando una presencia que hoy impone respeto y
               expectativa.
             </motion.p>
@@ -103,9 +103,9 @@ export function About() {
               className="text-lg text-white/70 leading-relaxed"
               variants={itemVariants}
             >
-              Mas que seguir tendencias, las transforma, dejando su marca en
+              Más que seguir tendencias, las transforma, dejando su marca en
               cada lugar donde toca, porque su historia no es solo la de un DJ,
-              sino la de una ambicion que sigue creciendo y que aun esta lejos
+              sino la de una ambición que sigue creciendo y que aún está lejos
               de alcanzar su techo.
             </motion.p>
 

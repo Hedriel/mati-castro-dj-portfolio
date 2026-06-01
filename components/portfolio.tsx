@@ -187,8 +187,8 @@ export function Portfolio() {
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Una seleccion de los mejores momentos capturados en mis shows. Cada
-            imagen cuenta una historia de energia y conexion con el publico.
+            Una selección de los mejores momentos capturados en mis shows. Cada
+            imagen cuenta una historia de energía y conexión con el público.
           </motion.p>
         </motion.div>
 
