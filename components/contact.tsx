@@ -34,7 +34,7 @@ export function Contact() {
       "Hola Mati! Me contacto desde tu página web.",
       "",
       `*Nombre:* ${formState.nombre || "No especificado"}`,
-      formState.empresa ? `*Empresa:* ${formState.empresa}` : "",
+      formState.empresa ? `*Ubicación:* ${formState.empresa}` : "",
       `*Tipo de evento:* ${eventTypeLabels[formState.tipoEvento] || formState.tipoEvento || "No especificado"}`,
       formState.fecha ? `*Fecha aproximada:* ${formState.fecha.split("-").reverse().join("-")}` : "",
       formState.mensaje ? `*Mensaje:* ${formState.mensaje}` : "",
@@ -130,7 +130,7 @@ export function Contact() {
                 </div>
                 <div>
                   <label className="block text-white/80 text-sm font-medium mb-2">
-                    Empresa
+                    Ubicación
                   </label>
                   <input
                     type="text"
@@ -139,7 +139,7 @@ export function Contact() {
                       setFormState({ ...formState, empresa: e.target.value })
                     }
                     className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#fe5900] focus:ring-1 focus:ring-[#fe5900] transition-colors"
-                    placeholder="Nombre de la empresa"
+                    placeholder="Ubicación del evento"
                   />
                 </div>
               </motion.div>
