@@ -92,11 +92,24 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} Mati Castro. Todos los derechos
-            reservados.
-          </p>
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+          <div className="flex flex-col gap-1">
+            <p className="text-white/40 text-sm sm:text-left text-center">
+              © {new Date().getFullYear()} Mati Castro. Todos los derechos
+              reservados.
+            </p>
+            <p className="text-white/20 text-[10px] hidden sm:block">
+              Sitio realizado por{" "}
+              <a
+                href="https://hernangonzalez.com.ar/#about"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/30 hover:text-[#fe5900] transition-colors"
+              >
+                Hernán Gonzalez
+              </a>
+            </p>
+          </div>
           <motion.a
             href="#contacto"
             className="px-6 py-2 bg-[#fe5900] text-black font-bold rounded-full text-sm hover:bg-[#ff7733] transition-colors neon-box-subtle"
@@ -105,6 +118,17 @@ export function Footer() {
           >
             Reservar Fecha
           </motion.a>
+          <p className="text-white/20 text-[10px] sm:hidden">
+            Sitio realizado por{" "}
+            <a
+              href="https://hernangonzalez.com.ar/#about"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/30 hover:text-[#fe5900] transition-colors"
+            >
+              Hernán Gonzalez
+            </a>
+          </p>
         </div>
       </div>
     </footer>
