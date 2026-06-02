@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Mati Castro" }],
   icons: {
-    icon: "/logo-mati.castro.png",
-    apple: "/logo-mati.castro.png",
+    icon: "/logo-mati-castro.png",
+    apple: "/logo-mati-castro.png",
   },
   openGraph: {
     title: "Mati Castro DJ | Eventos Corporativos & Fiestas Premium",
