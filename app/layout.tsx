@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="es" className={`${michroma.variable} bg-black`}>
       <body className={`${michroma.className} antialiased bg-black text-white`}>
         {children}
-        {process.env.NODE_ENV === "production" && <Analytics />}
+        <Analytics />
       </body>
     </html>
   );
