@@ -46,7 +46,7 @@ export function Services() {
   return (
     <section id="setup" className="py-24 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#fe5900]/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#24e41e]/5 via-transparent to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -58,7 +58,7 @@ export function Services() {
           viewport={{ once: true }}
         >
           <motion.span
-            className="text-[#fe5900] font-bold text-sm tracking-widest uppercase"
+            className="text-[#24e41e] font-bold text-sm tracking-widest uppercase"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -73,7 +73,7 @@ export function Services() {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Mi <span className="text-[#fe5900] neon-text-subtle">equipo</span>
+            Mi <span className="text-[#24e41e] neon-text-subtle">equipo</span>
           </motion.h2>
           <motion.p
             className="text-lg text-white/60 mt-4 max-w-2xl mx-auto"
@@ -105,16 +105,16 @@ export function Services() {
               <motion.div
                 className="relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 h-full overflow-hidden flex flex-col"
                 whileHover={{
-                  borderColor: "rgba(254, 89, 0, 0.5)",
-                  boxShadow: "0 0 40px rgba(254, 89, 0, 0.2)",
+                  borderColor: "rgba(36, 228, 30, 0.5)",
+                  boxShadow: "0 0 40px rgba(36, 228, 30, 0.2)",
                 }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Glow effect on hover */}
-                <motion.div className="absolute inset-0 bg-[#fe5900]/0 group-hover:bg-[#fe5900]/5 transition-colors duration-500" />
+                <motion.div className="absolute inset-0 bg-[#24e41e]/0 group-hover:bg-[#24e41e]/5 transition-colors duration-500" />
 
                 {/* Name */}
-                <h3 className="text-lg font-bold text-[#fe5900] mb-4 relative z-10 text-center tracking-wide">
+                <h3 className="text-lg font-bold text-[#24e41e] mb-4 relative z-10 text-center tracking-wide">
                   {item.name}
                 </h3>
 
@@ -131,7 +131,7 @@ export function Services() {
                 {/* Decorative corner */}
                 <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
                   <motion.div
-                    className="absolute top-0 right-0 w-40 h-1 bg-gradient-to-r from-transparent to-[#fe5900]/50 rotate-45 translate-x-10 -translate-y-10"
+                    className="absolute top-0 right-0 w-40 h-1 bg-gradient-to-r from-transparent to-[#24e41e]/50 rotate-45 translate-x-10 -translate-y-10"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                   />

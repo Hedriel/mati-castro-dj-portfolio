@@ -43,7 +43,7 @@ export function Hero() {
           >
             {/* Main Title */}
             <motion.h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-[#fe5900] neon-text"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-[#24e41e] neon-text"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.9 }}
@@ -82,10 +82,10 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="w-12 h-12 bg-white/10 group-hover:bg-[#fe5900] border border-white/20 group-hover:border-[#fe5900] rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_#fe5900]">
+                <span className="w-12 h-12 bg-white/10 group-hover:bg-[#24e41e] border border-white/20 group-hover:border-[#24e41e] rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_#24e41e]">
                   <Instagram className="w-5 h-5 text-white" />
                 </span>
-                <span className="text-[10px] text-white/60 group-hover:text-[#fe5900] transition-colors duration-300 uppercase tracking-wider font-medium">
+                <span className="text-[10px] text-white/60 group-hover:text-[#24e41e] transition-colors duration-300 uppercase tracking-wider font-medium">
                   Mati Castro
                 </span>
               </motion.a>
@@ -98,10 +98,10 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="w-12 h-12 bg-white/10 group-hover:bg-[#fe5900] border border-white/20 group-hover:border-[#fe5900] rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_#fe5900]">
+                <span className="w-12 h-12 bg-white/10 group-hover:bg-[#24e41e] border border-white/20 group-hover:border-[#24e41e] rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_#24e41e]">
                   <Instagram className="w-5 h-5 text-white" />
                 </span>
-                <span className="text-[10px] text-white/60 group-hover:text-[#fe5900] transition-colors duration-300 uppercase tracking-wider font-medium">
+                <span className="text-[10px] text-white/60 group-hover:text-[#24e41e] transition-colors duration-300 uppercase tracking-wider font-medium">
                   NewLevel.ok
                 </span>
               </motion.a>
@@ -116,16 +116,16 @@ export function Hero() {
             >
               <motion.a
                 href="#portfolio"
-                className="px-8 py-4 border-2 border-[#fe5900] text-[#fe5900] font-bold rounded-full hover:bg-[#fe5900] hover:text-black transition-all duration-300 neon-border text-center"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 30px #fe5900" }}
+                className="px-8 py-4 border-2 border-[#24e41e] text-[#24e41e] font-bold rounded-full hover:bg-[#24e41e] hover:text-black transition-all duration-300 neon-border text-center"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 30px #24e41e" }}
                 whileTap={{ scale: 0.95 }}
               >
                 Ver mi trabajo
               </motion.a>
               <motion.a
                 href="#contacto"
-                className="px-8 py-4 bg-[#fe5900] text-black font-bold rounded-full neon-box-subtle hover:bg-[#ff7733] transition-all duration-300 text-center"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 40px #fe5900" }}
+                className="px-8 py-4 bg-[#24e41e] text-black font-bold rounded-full neon-box-subtle hover:bg-[#50e94b] transition-all duration-300 text-center"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 40px #24e41e" }}
                 whileTap={{ scale: 0.95 }}
               >
                 Reservar ahora
@@ -152,14 +152,14 @@ export function Hero() {
               <div className="relative w-[252px] sm:w-[315px] md:w-[360px] lg:w-[405px] xl:w-[450px] aspect-[3/4] rounded-3xl">
                 {/* Floating animated container */}
                 <motion.div
-                  className="relative w-full h-full animate-float border-2 border-[#fe5900] rounded-3xl overflow-hidden"
+                  className="relative w-full h-full animate-float border-2 border-[#24e41e] rounded-3xl overflow-hidden"
                   animate={{
                     y: [0, -10, 0, -5, 0],
                     x: [0, 3, 0, -3, 0],
                     boxShadow: [
-                      "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
-                      "0 0 40px rgba(254, 89, 0, 0.9), 0 0 80px rgba(254, 89, 0, 0.5), inset 0 0 25px rgba(254, 89, 0, 0.3)",
-                      "0 0 15px rgba(254, 89, 0, 0.4), 0 0 30px rgba(254, 89, 0, 0.2), inset 0 0 10px rgba(254, 89, 0, 0.1)",
+                      "0 0 15px rgba(36, 228, 30, 0.4), 0 0 30px rgba(36, 228, 30, 0.2), inset 0 0 10px rgba(36, 228, 30, 0.1)",
+                      "0 0 40px rgba(36, 228, 30, 0.9), 0 0 80px rgba(36, 228, 30, 0.5), inset 0 0 25px rgba(36, 228, 30, 0.3)",
+                      "0 0 15px rgba(36, 228, 30, 0.4), 0 0 30px rgba(36, 228, 30, 0.2), inset 0 0 10px rgba(36, 228, 30, 0.1)",
                     ],
                   }}
                   transition={{
@@ -169,7 +169,7 @@ export function Hero() {
                   }}
                 >
                   {/* Glow effect behind image */}
-                  <div className="absolute inset-0 bg-[#fe5900]/20 blur-3xl rounded-full scale-75" />
+                  <div className="absolute inset-0 bg-[#24e41e]/20 blur-3xl rounded-full scale-75" />
 
                   <Image
                     src="/maticastro-hero.jpg"

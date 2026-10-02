@@ -39,7 +39,7 @@ export function Footer() {
   return (
     <footer className="bg-black border-t border-white/10 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#fe5900]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24e41e]/10 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid md:grid-cols-3 gap-12 items-start">
@@ -47,7 +47,7 @@ export function Footer() {
           <div className="space-y-4">
             <motion.a
               href="#inicio"
-              className="text-3xl font-black tracking-tight text-[#fe5900] neon-text-subtle inline-block"
+              className="text-3xl font-black tracking-tight text-[#24e41e] neon-text-subtle inline-block"
               whileHover={{ scale: 1.05 }}
             >
               MATI CASTRO
@@ -66,7 +66,7 @@ export function Footer() {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="text-white/60 hover:text-[#fe5900] transition-colors"
+                  className="text-white/60 hover:text-[#24e41e] transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   {link.name}
@@ -85,7 +85,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#fe5900] hover:border-[#fe5900] transition-colors group"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#24e41e] hover:border-[#24e41e] transition-colors group"
                   whileHover={{ scale: 1.1, y: -3 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={social.label}
@@ -110,7 +110,7 @@ export function Footer() {
                 href="https://hernangonzalez.com.ar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/30 hover:text-[#fe5900] transition-colors"
+                className="text-white/30 hover:text-[#24e41e] transition-colors"
               >
                 Hernán Gonzalez
               </a>
@@ -118,7 +118,7 @@ export function Footer() {
           </div>
           <motion.a
             href="#contacto"
-            className="px-6 py-2 bg-[#fe5900] text-black font-bold rounded-full text-sm hover:bg-[#ff7733] transition-colors neon-box-subtle"
+            className="px-6 py-2 bg-[#24e41e] text-black font-bold rounded-full text-sm hover:bg-[#50e94b] transition-colors neon-box-subtle"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -130,7 +130,7 @@ export function Footer() {
               href="https://hernangonzalez.com.ar"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/30 hover:text-[#fe5900] transition-colors"
+              className="text-white/30 hover:text-[#24e41e] transition-colors"
             >
               Hernán Gonzalez
             </a>

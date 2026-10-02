@@ -33,8 +33,8 @@ export function About() {
   return (
     <section id="sobre-mi" className="py-24 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#fe5900]/10 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#fe5900]/5 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#24e41e]/10 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#24e41e]/5 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -62,12 +62,12 @@ export function About() {
 
             {/* Decorative border */}
             <motion.div
-              className="absolute -inset-4 border-2 border-[#fe5900]/30 rounded-2xl -z-10"
+              className="absolute -inset-4 border-2 border-[#24e41e]/30 rounded-2xl -z-10"
               animate={{
                 boxShadow: [
-                  "0 0 20px rgba(254, 89, 0, 0.2)",
-                  "0 0 40px rgba(254, 89, 0, 0.4)",
-                  "0 0 20px rgba(254, 89, 0, 0.2)",
+                  "0 0 20px rgba(36, 228, 30, 0.2)",
+                  "0 0 40px rgba(36, 228, 30, 0.4)",
+                  "0 0 20px rgba(36, 228, 30, 0.2)",
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -82,7 +82,7 @@ export function About() {
                 variants={itemVariants}
               >
                 Sobre&nbsp;
-                <span className="text-[#fe5900] neon-text-subtle">Mi</span>
+                <span className="text-[#24e41e] neon-text-subtle">Mi</span>
               </motion.h2>
             </div>
 
@@ -117,16 +117,16 @@ export function About() {
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="text-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#fe5900]/50 transition-colors w-full max-w-xs"
+                  className="text-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#24e41e]/50 transition-colors w-full max-w-xs"
                   variants={itemVariants}
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 0 20px rgba(254, 89, 0, 0.3)",
+                    boxShadow: "0 0 20px rgba(36, 228, 30, 0.3)",
                   }}
                   custom={index}
                 >
-                  <stat.icon className="w-8 h-8 text-[#fe5900] mx-auto mb-2" />
-                  <div className="text-3xl font-bold text-[#fe5900] neon-text-subtle">
+                  <stat.icon className="w-8 h-8 text-[#24e41e] mx-auto mb-2" />
+                  <div className="text-3xl font-bold text-[#24e41e] neon-text-subtle">
                     {stat.value}
                   </div>
                   <div className="text-sm text-white/60">{stat.label}</div>

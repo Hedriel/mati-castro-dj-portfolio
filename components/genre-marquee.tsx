@@ -9,10 +9,10 @@ export function GenreMarquee() {
   const duplicatedGenres = [...genres, ...genres, ...genres, ...genres];
 
   return (
-    <div className="relative h-[50px] bg-[#fe5900] overflow-hidden">
+    <div className="relative h-[50px] bg-[#24e41e] overflow-hidden">
       {/* Gradient overlays for fade effect */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#fe5900] to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#fe5900] to-transparent z-10" />
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#24e41e] to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#24e41e] to-transparent z-10" />
 
       {/* Marquee container */}
       <motion.div

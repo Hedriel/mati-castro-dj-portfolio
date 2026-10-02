@@ -10,19 +10,19 @@
   --card-foreground: #ffffff;
   --popover: #0a0a0a;
   --popover-foreground: #ffffff;
-  --primary: #fe5900;
+  --primary: #24e41e;
   --primary-foreground: #000000;
   --secondary: #1a1a1a;
   --secondary-foreground: #ffffff;
   --muted: #1a1a1a;
   --muted-foreground: #a1a1a1;
-  --accent: #fe5900;
+  --accent: #24e41e;
   --accent-foreground: #000000;
   --destructive: #ff4444;
   --destructive-foreground: #ffffff;
   --border: #2a2a2a;
   --input: #1a1a1a;
-  --ring: #fe5900;
+  --ring: #24e41e;
   --radius: 0.625rem;
 }
 
@@ -66,37 +66,37 @@
 /* Custom neon glow utilities */
 .neon-text {
   text-shadow:
-    0 0 5px rgba(254, 89, 0, 0.7),
-    0 0 10px rgba(254, 89, 0, 0.6),
-    0 0 20px rgba(254, 89, 0, 0.5),
-    0 0 40px rgba(254, 89, 0, 0.4);
+    0 0 5px rgba(36, 228, 30, 0.7),
+    0 0 10px rgba(36, 228, 30, 0.6),
+    0 0 20px rgba(36, 228, 30, 0.5),
+    0 0 40px rgba(36, 228, 30, 0.4);
 }
 
 .neon-text-subtle {
   text-shadow:
-    0 0 5px rgba(254, 89, 0, 0.7),
-    0 0 10px rgba(254, 89, 0, 0.5);
+    0 0 5px rgba(36, 228, 30, 0.7),
+    0 0 10px rgba(36, 228, 30, 0.5);
 }
 
 .neon-box {
   box-shadow: 
-    0 0 5px #fe5900,
-    0 0 10px #fe5900,
-    0 0 20px #fe5900,
-    0 0 40px #fe5900;
+    0 0 5px #24e41e,
+    0 0 10px #24e41e,
+    0 0 20px #24e41e,
+    0 0 40px #24e41e;
 }
 
 .neon-box-subtle {
   box-shadow: 
-    0 0 5px #fe5900,
-    0 0 10px #fe5900;
+    0 0 5px #24e41e,
+    0 0 10px #24e41e;
 }
 
 .neon-border {
   box-shadow: 
-    0 0 5px #fe5900,
-    0 0 10px #fe5900,
-    inset 0 0 5px rgba(254, 89, 0, 0.1);
+    0 0 5px #24e41e,
+    0 0 10px #24e41e,
+    inset 0 0 5px rgba(36, 228, 30, 0.1);
 }
 
 /* Smooth scrolling */
@@ -114,12 +114,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fe5900;
+  background: #24e41e;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff7733;
+  background: #50e94b;
 }
 
 /* Genre marquee animation */

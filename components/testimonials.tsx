@@ -61,8 +61,8 @@ export function Testimonials() {
   return (
     <section className="py-24 bg-black relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#fe5900]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#fe5900]/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#24e41e]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#24e41e]/5 rounded-full blur-3xl" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -74,7 +74,7 @@ export function Testimonials() {
           viewport={{ once: true }}
         >
           <motion.span
-            className="text-[#fe5900] font-bold text-sm tracking-widest uppercase"
+            className="text-[#24e41e] font-bold text-sm tracking-widest uppercase"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -90,7 +90,7 @@ export function Testimonials() {
             viewport={{ once: true }}
           >
             Lo que dicen{" "}
-            <span className="text-[#fe5900] neon-text-subtle">mis clientes</span>
+            <span className="text-[#24e41e] neon-text-subtle">mis clientes</span>
           </motion.h2>
         </motion.div>
 
@@ -116,23 +116,23 @@ export function Testimonials() {
                   <motion.div
                     className="text-center p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10"
                     whileHover={{
-                      borderColor: "rgba(254, 89, 0, 0.3)",
-                      boxShadow: "0 0 40px rgba(254, 89, 0, 0.1)",
+                      borderColor: "rgba(36, 228, 30, 0.3)",
+                      boxShadow: "0 0 40px rgba(36, 228, 30, 0.1)",
                     }}
                   >
                     {/* Quote icon */}
                     <motion.div
-                      className="w-16 h-16 mx-auto mb-8 rounded-full bg-[#fe5900]/10 flex items-center justify-center"
+                      className="w-16 h-16 mx-auto mb-8 rounded-full bg-[#24e41e]/10 flex items-center justify-center"
                       animate={{
                         boxShadow: [
-                          "0 0 20px rgba(254, 89, 0, 0.2)",
-                          "0 0 40px rgba(254, 89, 0, 0.4)",
-                          "0 0 20px rgba(254, 89, 0, 0.2)",
+                          "0 0 20px rgba(36, 228, 30, 0.2)",
+                          "0 0 40px rgba(36, 228, 30, 0.4)",
+                          "0 0 20px rgba(36, 228, 30, 0.2)",
                         ],
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      <Quote className="w-8 h-8 text-[#fe5900]" />
+                      <Quote className="w-8 h-8 text-[#24e41e]" />
                     </motion.div>
 
                     {/* Quote text */}
@@ -142,7 +142,7 @@ export function Testimonials() {
 
                     {/* Author */}
                     <div>
-                      <p className="text-[#fe5900] font-bold text-lg">
+                      <p className="text-[#24e41e] font-bold text-lg">
                         {testimonial.author}
                       </p>
                       <p className="text-white/60">
@@ -158,7 +158,7 @@ export function Testimonials() {
           {/* Navigation */}
           <div className="flex justify-center items-center gap-4 mt-8">
             <motion.button
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#fe5900] hover:border-[#fe5900] transition-colors"
+              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#24e41e] hover:border-[#24e41e] transition-colors"
               onClick={() => navigate("prev")}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -173,7 +173,7 @@ export function Testimonials() {
                   key={index}
                   className={`w-3 h-3 rounded-full transition-colors ${
                     index === currentIndex
-                      ? "bg-[#fe5900]"
+                      ? "bg-[#24e41e]"
                       : "bg-white/20 hover:bg-white/40"
                   }`}
                   onClick={() => {
@@ -183,7 +183,7 @@ export function Testimonials() {
                   whileHover={{ scale: 1.2 }}
                   animate={
                     index === currentIndex
-                      ? { boxShadow: "0 0 15px #fe5900" }
+                      ? { boxShadow: "0 0 15px #24e41e" }
                       : { boxShadow: "none" }
                   }
                 />
@@ -191,7 +191,7 @@ export function Testimonials() {
             </div>
 
             <motion.button
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#fe5900] hover:border-[#fe5900] transition-colors"
+              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#24e41e] hover:border-[#24e41e] transition-colors"
               onClick={() => navigate("next")}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

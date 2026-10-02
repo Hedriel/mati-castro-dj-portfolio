@@ -68,7 +68,7 @@ export function Contact() {
   return (
     <section id="contacto" className="py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#fe5900]/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#24e41e]/10 via-transparent to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -80,7 +80,7 @@ export function Contact() {
           viewport={{ once: true }}
         >
           <motion.span
-            className="text-[#fe5900] font-bold text-sm tracking-widest uppercase"
+            className="text-[#24e41e] font-bold text-sm tracking-widest uppercase"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -96,7 +96,7 @@ export function Contact() {
             viewport={{ once: true }}
           >
             Reserva{" "}
-            <span className="text-[#fe5900] neon-text-subtle">tu fecha</span>
+            <span className="text-[#24e41e] neon-text-subtle">tu fecha</span>
           </motion.h2>
         </motion.div>
 
@@ -124,7 +124,7 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState({ ...formState, nombre: e.target.value })
                     }
-                    className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#fe5900] focus:ring-1 focus:ring-[#fe5900] transition-colors"
+                    className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#24e41e] focus:ring-1 focus:ring-[#24e41e] transition-colors"
                     placeholder="Tu nombre"
                   />
                 </div>
@@ -138,7 +138,7 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState({ ...formState, empresa: e.target.value })
                     }
-                    className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#fe5900] focus:ring-1 focus:ring-[#fe5900] transition-colors"
+                    className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#24e41e] focus:ring-1 focus:ring-[#24e41e] transition-colors"
                     placeholder="Ubicación del evento"
                   />
                 </div>
@@ -158,7 +158,7 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState({ ...formState, tipoEvento: e.target.value })
                     }
-                    className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#fe5900] focus:ring-1 focus:ring-[#fe5900] transition-colors appearance-none hover:cursor-pointer"
+                    className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#24e41e] focus:ring-1 focus:ring-[#24e41e] transition-colors appearance-none hover:cursor-pointer"
                   >
                     <option value="" className="bg-black">
                       Seleccionar...
@@ -205,7 +205,7 @@ export function Contact() {
                   onChange={(e) =>
                     setFormState({ ...formState, mensaje: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#fe5900] focus:ring-1 focus:ring-[#fe5900] transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#24e41e] focus:ring-1 focus:ring-[#24e41e] transition-colors resize-none"
                   placeholder="Contame más sobre tu evento..."
                 />
               </motion.div>
@@ -213,7 +213,7 @@ export function Contact() {
               <motion.div variants={itemVariants}>
                 <motion.button
                   type="submit"
-                  className="w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 bg-[#fe5900] text-black hover:bg-[#ff7733] neon-box-subtle hover:cursor-pointer"
+                  className="w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 bg-[#24e41e] text-black hover:bg-[#50e94b] neon-box-subtle hover:cursor-pointer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -284,8 +284,8 @@ export function Contact() {
 
               <div className="p-6 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#fe5900]/20 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-[#fe5900]" />
+                  <div className="w-12 h-12 rounded-full bg-[#24e41e]/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-[#24e41e]" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Ubicación</p>

@@ -96,7 +96,7 @@ function PortfolioItem({
     <motion.div
       ref={ref}
       style={{ scale, opacity }}
-      className="group relative aspect-[4/3] rounded-xl cursor-pointer transition-shadow duration-300 md:hover:shadow-[0_0_40px_rgba(254,89,0,0.2)]"
+      className="group relative aspect-[4/3] rounded-xl cursor-pointer transition-shadow duration-300 md:hover:shadow-[0_0_40px_rgba(36,228,30,0.2)]"
       onClick={onClick}
     >
       <div className="relative w-full h-full overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
@@ -109,18 +109,18 @@ function PortfolioItem({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 border-2 border-[#fe5900]/50 md:border-[#fe5900]/0 md:group-hover:border-[#fe5900]/50 rounded-xl transition-all duration-300" />
+        <div className="absolute inset-0 border-2 border-[#24e41e]/50 md:border-[#24e41e]/0 md:group-hover:border-[#24e41e]/50 rounded-xl transition-all duration-300" />
 
         {/* Category badge */}
         <div className="absolute top-4 left-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-          <span className="px-3 py-1 bg-[#fe5900] text-black text-xs font-bold rounded-full inline-block shadow-[0_0_8px_rgba(254,89,0,0.9),0_0_20px_rgba(254,89,0,0.6),0_0_40px_rgba(254,89,0,0.3)]">
+          <span className="px-3 py-1 bg-[#24e41e] text-black text-xs font-bold rounded-full inline-block shadow-[0_0_8px_rgba(36,228,30,0.9),0_0_20px_rgba(36,228,30,0.6),0_0_40px_rgba(36,228,30,0.3)]">
             {image.category}
           </span>
         </div>
 
         {/* View indicator - hidden on mobile */}
         <div className="absolute bottom-4 right-4 hidden md:block md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-          <div className="w-10 h-10 bg-[#fe5900] rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-[#24e41e] rounded-full flex items-center justify-center">
             <span className="text-black text-xl">+</span>
           </div>
         </div>
@@ -148,7 +148,7 @@ export function Portfolio() {
   return (
     <section id="portfolio" className="py-24 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#fe5900]/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#24e41e]/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -160,7 +160,7 @@ export function Portfolio() {
           viewport={{ once: true }}
         >
           <motion.span
-            className="text-[#fe5900] font-bold text-sm tracking-widest uppercase"
+            className="text-[#24e41e] font-bold text-sm tracking-widest uppercase"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -176,7 +176,7 @@ export function Portfolio() {
             viewport={{ once: true }}
           >
             Momentos{" "}
-            <span className="text-[#fe5900] neon-text-subtle">
+            <span className="text-[#24e41e] neon-text-subtle">
               inolvidables
             </span>
           </motion.h2>
@@ -217,7 +217,7 @@ export function Portfolio() {
           >
             {/* Close button */}
             <button
-              className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-[#fe5900] rounded-full flex items-center justify-center transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-[#24e41e] rounded-full flex items-center justify-center transition-colors z-10"
               onClick={() => setSelectedImage(null)}
             >
               <X className="w-6 h-6 text-white" />
@@ -225,7 +225,7 @@ export function Portfolio() {
 
             {/* Navigation buttons */}
             <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#fe5900] rounded-full flex items-center justify-center transition-colors z-10"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#24e41e] rounded-full flex items-center justify-center transition-colors z-10"
               onClick={(e) => {
                 e.stopPropagation();
                 navigateImage("prev");
@@ -234,7 +234,7 @@ export function Portfolio() {
               <ChevronLeft className="w-6 h-6 text-white" />
             </button>
             <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#fe5900] rounded-full flex items-center justify-center transition-colors z-10"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#24e41e] rounded-full flex items-center justify-center transition-colors z-10"
               onClick={(e) => {
                 e.stopPropagation();
                 navigateImage("next");

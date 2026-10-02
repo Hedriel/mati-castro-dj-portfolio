@@ -76,7 +76,7 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-black/80 backdrop-blur-lg border-b border-[#fe5900]/20"
+            ? "bg-black/80 backdrop-blur-lg border-b border-[#24e41e]/20"
             : "bg-transparent"
         }`}
       >
@@ -104,19 +104,19 @@ export function Navbar() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium text-white/80 hover:text-[#fe5900] transition-colors relative group"
+                  className="text-sm font-medium text-white/80 hover:text-[#24e41e] transition-colors relative group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#fe5900] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#fe5900]" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#24e41e] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#24e41e]" />
                 </motion.a>
               ))}
               <motion.a
                 href="#contacto"
-                className="px-6 py-2.5 bg-[#fe5900] text-black font-bold rounded-full neon-box-subtle hover:bg-[#ff7733] transition-all duration-300"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 30px #fe5900" }}
+                className="px-6 py-2.5 bg-[#24e41e] text-black font-bold rounded-full neon-box-subtle hover:bg-[#50e94b] transition-all duration-300"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 30px #24e41e" }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ export function Navbar() {
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className="text-4xl sm:text-5xl font-bold text-white hover:text-[#fe5900] transition-colors"
+                    className="text-4xl sm:text-5xl font-bold text-white hover:text-[#24e41e] transition-colors"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ export function Navbar() {
                 ))}
                 <motion.a
                   href="#contacto"
-                  className="mt-8 px-10 py-4 bg-[#fe5900] text-black text-2xl font-bold rounded-full neon-box-subtle"
+                  className="mt-8 px-10 py-4 bg-[#24e41e] text-black text-2xl font-bold rounded-full neon-box-subtle"
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}

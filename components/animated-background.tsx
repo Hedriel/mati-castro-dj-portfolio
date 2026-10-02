@@ -41,12 +41,12 @@ export function AnimatedBackground() {
         this.pulseSpeed = Math.random() * 0.02 + 0.01
         this.pulseOffset = Math.random() * Math.PI * 2
 
-        // Colors based on the brand palette - orange/amber tones
+        // Colors based on the brand palette - Kawasaki neon green tones
         const colors = [
-          "254, 89, 0",    // Primary orange
-          "255, 119, 51",  // Lighter orange
-          "200, 70, 0",    // Darker orange
-          "255, 150, 50",  // Amber
+          "36, 228, 30",   // Primary neon green (#24e41e)
+          "80, 233, 75",   // 20% white tint
+          "29, 182, 24",   // 20% black shade
+          "102, 236, 98",  // 30% white tint
         ]
         this.color = colors[Math.floor(Math.random() * colors.length)]
       }
@@ -97,7 +97,7 @@ export function AnimatedBackground() {
           if (distance < 150) {
             const opacity = (1 - distance / 150) * 0.15
             ctx.beginPath()
-            ctx.strokeStyle = `rgba(254, 89, 0, ${opacity})`
+            ctx.strokeStyle = `rgba(36, 228, 30, ${opacity})`
             ctx.lineWidth = 0.5
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
@@ -127,9 +127,9 @@ export function AnimatedBackground() {
           orb.y + offsetY,
           orb.radius
         )
-        gradient.addColorStop(0, "rgba(254, 89, 0, 0.08)")
-        gradient.addColorStop(0.5, "rgba(254, 89, 0, 0.03)")
-        gradient.addColorStop(1, "rgba(254, 89, 0, 0)")
+        gradient.addColorStop(0, "rgba(36, 228, 30, 0.08)")
+        gradient.addColorStop(0.5, "rgba(36, 228, 30, 0.03)")
+        gradient.addColorStop(1, "rgba(36, 228, 30, 0)")
 
         ctx.beginPath()
         ctx.arc(orb.x + offsetX, orb.y + offsetY, orb.radius, 0, Math.PI * 2)

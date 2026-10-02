@@ -34,7 +34,7 @@ export function DatePicker({
         <button
           type="button"
           className={cn(
-            "w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-left flex items-center justify-between focus:outline-none focus:border-[#fe5900] focus:ring-1 focus:ring-[#fe5900] transition-colors",
+            "w-full px-4 py-3 bg-black/80 border border-white/10 rounded-xl text-left flex items-center justify-between focus:outline-none focus:border-[#24e41e] focus:ring-1 focus:ring-[#24e41e] transition-colors",
             !date && "text-white/40",
             date && "text-white",
             className,
